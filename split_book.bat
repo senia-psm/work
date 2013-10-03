@@ -33,7 +33,7 @@ echo '>>>>> Step 2/2. Writing...'
 $text.GetEnumerator() |
 foreach {
 	$_.Key
-	$text[$_.Key].Trim() >> $_.Key
+	$text[$_.Key].Trim() | Out-File -Encoding "UTF8" $_.Key
 }
 
-# read-host
+read-host
